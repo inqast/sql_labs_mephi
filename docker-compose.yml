@@ -1,0 +1,13 @@
+version: "3.1"
+services:
+  db:
+    image: postgis/postgis:15-3.5
+    ports:
+      - "5432:5432"
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    env_file:
+      - ./db.env
+
+volumes:
+  local_pgdata:
